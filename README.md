@@ -6,7 +6,7 @@ Code based on https://github.com/cure-lab/LTSF-Linear.
 3. Concatenated input to xFormers and unpacked the inputs to measure flops. 
 
 ## Notice
-0. Unzip the TSF benchmark dataset into *dataset* directory.
+0. Make *dataset* directory and Unzip the TSF benchmark dataset into the *dataset* directory.
 
 1. Bash commands
 
@@ -23,4 +23,10 @@ bash scripts/EXP-LongForecasting/Formers_Long/*dataset-name*.sh
 # e.g. etth2 -> GPU 3, GPU 24~31
 ```
 
-Or alternatively, you can use the default shell script command from https://github.com/cure-lab/LTSF-Linear.
+Or alternatively, you can use the default shell script command from https://github.com/cure-lab/LTSF-Linear. i.e.
+```
+bash scripts/EXP-LongForecasting/Linear/*dataset-name*.sh
+bash scripts/EXP-LongForecasting/Formers_Long.sh
+```
+
+2. All the results are obtainable from ./logs

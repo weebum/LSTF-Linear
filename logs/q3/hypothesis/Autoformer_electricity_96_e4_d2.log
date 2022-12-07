@@ -1,0 +1,401 @@
+Args in experiment:
+Namespace(is_training=1, model_id='electricity_96_96', model='Autoformer', data='custom', root_path='./dataset/', data_path='electricity.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, individual=False, embed_type=0, enc_in=321, dec_in=321, c_out=321, d_model=512, n_heads=8, e_layers=4, d_layers=2, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=1, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:1
+>>>>>>>start training : electricity_96_96_Autoformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el4_dl2_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 18221
+val 2537
+test 5165
+Epoch: 1 cost time: 75.56613111495972
+Epoch: 1, Steps: 569 | Train Loss: 0.2204344 Vali Loss: 0.1577840 Test Loss: 0.1946251
+Validation loss decreased (inf --> 0.157784).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 68.73694562911987
+Epoch: 2, Steps: 569 | Train Loss: 0.1331765 Vali Loss: 0.1488209 Test Loss: 0.1928550
+Validation loss decreased (0.157784 --> 0.148821).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 69.52108025550842
+Epoch: 3, Steps: 569 | Train Loss: 0.1136127 Vali Loss: 0.1489811 Test Loss: 0.1918599
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 69.61298084259033
+Epoch: 4, Steps: 569 | Train Loss: 0.1061497 Vali Loss: 0.1524351 Test Loss: 0.1954463
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 69.14709424972534
+Epoch: 5, Steps: 569 | Train Loss: 0.1024406 Vali Loss: 0.1538401 Test Loss: 0.1966748
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : electricity_96_96_Autoformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el4_dl2_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 5165
+mse:0.19285547733306885, mae:0.30645614862442017
+INFO: Trainable parameter count: 0.49M
+INFO: Trainable parameter count: 0.50M
+INFO: Trainable parameter count: 0.99M
+INFO: Trainable parameter count: 0.99M
+INFO: Trainable parameter count: 1.25M
+INFO: Trainable parameter count: 1.25M
+INFO: Trainable parameter count: 1.52M
+INFO: Trainable parameter count: 1.52M
+INFO: Trainable parameter count: 1.78M
+INFO: Trainable parameter count: 1.78M
+INFO: Trainable parameter count: 2.04M
+INFO: Trainable parameter count: 2.04M
+INFO: Trainable parameter count: 3.09M
+INFO: Trainable parameter count: 4.14M
+INFO: Trainable parameter count: 4.40M
+INFO: Trainable parameter count: 4.40M
+INFO: Trainable parameter count: 4.66M
+INFO: Trainable parameter count: 4.66M
+INFO: Trainable parameter count: 4.93M
+INFO: Trainable parameter count: 4.93M
+INFO: Trainable parameter count: 5.19M
+INFO: Trainable parameter count: 5.19M
+INFO: Trainable parameter count: 6.24M
+INFO: Trainable parameter count: 7.29M
+INFO: Trainable parameter count: 7.55M
+INFO: Trainable parameter count: 7.55M
+INFO: Trainable parameter count: 7.81M
+INFO: Trainable parameter count: 7.81M
+INFO: Trainable parameter count: 8.07M
+INFO: Trainable parameter count: 8.07M
+INFO: Trainable parameter count: 8.34M
+INFO: Trainable parameter count: 8.34M
+INFO: Trainable parameter count: 9.38M
+INFO: Trainable parameter count: 10.43M
+INFO: Trainable parameter count: 10.70M
+INFO: Trainable parameter count: 10.70M
+INFO: Trainable parameter count: 10.96M
+INFO: Trainable parameter count: 10.96M
+INFO: Trainable parameter count: 11.22M
+INFO: Trainable parameter count: 11.22M
+INFO: Trainable parameter count: 11.48M
+INFO: Trainable parameter count: 11.48M
+INFO: Trainable parameter count: 12.53M
+INFO: Trainable parameter count: 13.58M
+INFO: Trainable parameter count: 13.58M
+INFO: Trainable parameter count: 13.58M
+INFO: Trainable parameter count: 13.84M
+INFO: Trainable parameter count: 13.84M
+INFO: Trainable parameter count: 14.11M
+INFO: Trainable parameter count: 14.11M
+INFO: Trainable parameter count: 14.37M
+INFO: Trainable parameter count: 14.37M
+INFO: Trainable parameter count: 14.63M
+INFO: Trainable parameter count: 14.63M
+INFO: Trainable parameter count: 14.90M
+INFO: Trainable parameter count: 14.90M
+INFO: Trainable parameter count: 15.16M
+INFO: Trainable parameter count: 15.16M
+INFO: Trainable parameter count: 15.42M
+INFO: Trainable parameter count: 15.42M
+INFO: Trainable parameter count: 15.68M
+INFO: Trainable parameter count: 15.68M
+INFO: Trainable parameter count: 16.73M
+INFO: Trainable parameter count: 17.78M
+INFO: Trainable parameter count: 18.27M
+INFO: Trainable parameter count: 18.54M
+INFO: Trainable parameter count: 18.54M
+INFO: Trainable parameter count: 18.80M
+INFO: Trainable parameter count: 18.80M
+INFO: Trainable parameter count: 19.06M
+INFO: Trainable parameter count: 19.06M
+INFO: Trainable parameter count: 19.32M
+INFO: Trainable parameter count: 19.32M
+INFO: Trainable parameter count: 19.59M
+INFO: Trainable parameter count: 19.59M
+INFO: Trainable parameter count: 19.85M
+INFO: Trainable parameter count: 19.85M
+INFO: Trainable parameter count: 20.11M
+INFO: Trainable parameter count: 20.11M
+INFO: Trainable parameter count: 20.37M
+INFO: Trainable parameter count: 20.38M
+INFO: Trainable parameter count: 21.42M
+INFO: Trainable parameter count: 22.47M
+INFO: Trainable parameter count: 22.97M
+INFO: Trainable parameter count: 22.97M
+INFO: Trainable parameter count: 22.97M
+INFO: Trainable parameter count: 23.13M
+INFO: Trainable parameter count: 23.13M
+Model(
+  23.13 M, 99.991% Params, 2.65 GMac, 100.000% MACs, 
+  (decomp): series_decomp(
+    0, 0.000% Params, 38.52 KMac, 0.001% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 38.52 KMac, 0.001% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 38.52 KMac, 0.001% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (enc_embedding): DataEmbedding_wo_pos(
+    495.1 k, 2.140% Params, 47.53 MMac, 1.793% MACs, 
+    (value_embedding): TokenEmbedding(
+      493.06 k, 2.132% Params, 47.33 MMac, 1.785% MACs, 
+      (tokenConv): Conv1d(493.06 k, 2.132% Params, 47.33 MMac, 1.785% MACs, 321, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False, padding_mode=circular)
+    )
+    (position_embedding): PositionalEmbedding(0, 0.000% Params, 0.0 Mac, 0.000% MACs, )
+    (temporal_embedding): TimeFeatureEmbedding(
+      2.05 k, 0.009% Params, 196.61 KMac, 0.007% MACs, 
+      (embed): Linear(2.05 k, 0.009% Params, 196.61 KMac, 0.007% MACs, in_features=4, out_features=512, bias=False)
+    )
+    (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+  )
+  (dec_embedding): DataEmbedding_wo_pos(
+    495.1 k, 2.140% Params, 71.29 MMac, 2.689% MACs, 
+    (value_embedding): TokenEmbedding(
+      493.06 k, 2.132% Params, 71.0 MMac, 2.678% MACs, 
+      (tokenConv): Conv1d(493.06 k, 2.132% Params, 71.0 MMac, 2.678% MACs, 321, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False, padding_mode=circular)
+    )
+    (position_embedding): PositionalEmbedding(0, 0.000% Params, 0.0 Mac, 0.000% MACs, )
+    (temporal_embedding): TimeFeatureEmbedding(
+      2.05 k, 0.009% Params, 294.91 KMac, 0.011% MACs, 
+      (embed): Linear(2.05 k, 0.009% Params, 294.91 KMac, 0.011% MACs, in_features=4, out_features=512, bias=False)
+    )
+    (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+  )
+  (encoder): Encoder(
+    12.59 M, 54.434% Params, 1.21 GMac, 45.583% MACs, 
+    (attn_layers): ModuleList(
+      12.59 M, 54.434% Params, 1.21 GMac, 45.583% MACs, 
+      (0): EncoderLayer(
+        3.15 M, 13.609% Params, 302.11 MMac, 11.396% MACs, 
+        (attention): AutoCorrelationLayer(
+          1.05 M, 4.542% Params, 100.67 MMac, 3.797% MACs, 
+          (inner_correlation): AutoCorrelation(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 4.533% Params, 100.66 MMac, 3.797% MACs, 512, 2048, kernel_size=(1,), stride=(1,), bias=False)
+        (conv2): Conv1d(1.05 M, 4.533% Params, 100.66 MMac, 3.797% MACs, 2048, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (decomp1): series_decomp(
+          0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 61.44 KMac, 0.002% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (decomp2): series_decomp(
+          0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 61.44 KMac, 0.002% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+      (1): EncoderLayer(
+        3.15 M, 13.609% Params, 302.11 MMac, 11.396% MACs, 
+        (attention): AutoCorrelationLayer(
+          1.05 M, 4.542% Params, 100.67 MMac, 3.797% MACs, 
+          (inner_correlation): AutoCorrelation(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 4.533% Params, 100.66 MMac, 3.797% MACs, 512, 2048, kernel_size=(1,), stride=(1,), bias=False)
+        (conv2): Conv1d(1.05 M, 4.533% Params, 100.66 MMac, 3.797% MACs, 2048, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (decomp1): series_decomp(
+          0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 61.44 KMac, 0.002% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (decomp2): series_decomp(
+          0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 61.44 KMac, 0.002% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+      (2): EncoderLayer(
+        3.15 M, 13.609% Params, 302.11 MMac, 11.396% MACs, 
+        (attention): AutoCorrelationLayer(
+          1.05 M, 4.542% Params, 100.67 MMac, 3.797% MACs, 
+          (inner_correlation): AutoCorrelation(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 4.533% Params, 100.66 MMac, 3.797% MACs, 512, 2048, kernel_size=(1,), stride=(1,), bias=False)
+        (conv2): Conv1d(1.05 M, 4.533% Params, 100.66 MMac, 3.797% MACs, 2048, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (decomp1): series_decomp(
+          0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 61.44 KMac, 0.002% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (decomp2): series_decomp(
+          0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 61.44 KMac, 0.002% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+      (3): EncoderLayer(
+        3.15 M, 13.609% Params, 302.11 MMac, 11.396% MACs, 
+        (attention): AutoCorrelationLayer(
+          1.05 M, 4.542% Params, 100.67 MMac, 3.797% MACs, 
+          (inner_correlation): AutoCorrelation(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 4.533% Params, 100.66 MMac, 3.797% MACs, 512, 2048, kernel_size=(1,), stride=(1,), bias=False)
+        (conv2): Conv1d(1.05 M, 4.533% Params, 100.66 MMac, 3.797% MACs, 2048, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (decomp1): series_decomp(
+          0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 61.44 KMac, 0.002% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (decomp2): series_decomp(
+          0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 61.44 KMac, 0.002% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 61.44 KMac, 0.002% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+    )
+    (norm): my_Layernorm(
+      0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+      (layernorm): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+  (decoder): Decoder(
+    9.55 M, 41.276% Params, 1.32 GMac, 49.934% MACs, 
+    (layers): ModuleList(
+      9.38 M, 40.564% Params, 1.3 GMac, 49.041% MACs, 
+      (0): DecoderLayer(
+        4.69 M, 20.282% Params, 650.08 MMac, 24.521% MACs, 
+        (self_attention): AutoCorrelationLayer(
+          1.05 M, 4.542% Params, 151.0 MMac, 5.696% MACs, 
+          (inner_correlation): AutoCorrelation(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (cross_attention): AutoCorrelationLayer(
+          1.05 M, 4.542% Params, 125.83 MMac, 4.746% MACs, 
+          (inner_correlation): AutoCorrelation(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 4.533% Params, 150.99 MMac, 5.695% MACs, 512, 2048, kernel_size=(1,), stride=(1,), bias=False)
+        (conv2): Conv1d(1.05 M, 4.533% Params, 150.99 MMac, 5.695% MACs, 2048, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (decomp1): series_decomp(
+          0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 86.02 KMac, 0.003% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (decomp2): series_decomp(
+          0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 86.02 KMac, 0.003% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (decomp3): series_decomp(
+          0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 86.02 KMac, 0.003% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+        (projection): Conv1d(493.06 k, 2.132% Params, 71.0 MMac, 2.678% MACs, 512, 321, kernel_size=(3,), stride=(1,), padding=(1,), bias=False, padding_mode=circular)
+      )
+      (1): DecoderLayer(
+        4.69 M, 20.282% Params, 650.08 MMac, 24.521% MACs, 
+        (self_attention): AutoCorrelationLayer(
+          1.05 M, 4.542% Params, 151.0 MMac, 5.696% MACs, 
+          (inner_correlation): AutoCorrelation(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (cross_attention): AutoCorrelationLayer(
+          1.05 M, 4.542% Params, 125.83 MMac, 4.746% MACs, 
+          (inner_correlation): AutoCorrelation(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 1.136% Params, 25.17 MMac, 0.949% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 1.136% Params, 37.75 MMac, 1.424% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 4.533% Params, 150.99 MMac, 5.695% MACs, 512, 2048, kernel_size=(1,), stride=(1,), bias=False)
+        (conv2): Conv1d(1.05 M, 4.533% Params, 150.99 MMac, 5.695% MACs, 2048, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (decomp1): series_decomp(
+          0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 86.02 KMac, 0.003% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (decomp2): series_decomp(
+          0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 86.02 KMac, 0.003% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (decomp3): series_decomp(
+          0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+          (moving_avg): moving_avg(
+            0, 0.000% Params, 86.02 KMac, 0.003% MACs, 
+            (avg): AvgPool1d(0, 0.000% Params, 86.02 KMac, 0.003% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+          )
+        )
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+        (projection): Conv1d(493.06 k, 2.132% Params, 71.0 MMac, 2.678% MACs, 512, 321, kernel_size=(3,), stride=(1,), padding=(1,), bias=False, padding_mode=circular)
+      )
+    )
+    (norm): my_Layernorm(
+      0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+      (layernorm): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+    )
+    (projection): Linear(164.67 k, 0.712% Params, 23.67 MMac, 0.893% MACs, in_features=512, out_features=321, bias=True)
+  )
+)
+Computational complexity:       2.65 GMac
+Number of parameters:           23.13 M 

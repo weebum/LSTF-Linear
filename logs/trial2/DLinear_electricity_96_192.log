@@ -1,0 +1,68 @@
+Args in experiment:
+Namespace(is_training=1, model_id='Exchange_96_192', model='DLinear', data='custom', root_path='./dataset/', data_path='electricity.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=192, individual=False, embed_type=0, enc_in=8, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=8, patience=3, learning_rate=0.0005, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=3, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:3
+>>>>>>>start training : Exchange_96_192_DLinear_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 18125
+val 2441
+test 5069
+Epoch: 1 cost time: 23.46217370033264
+Epoch: 1, Steps: 2265 | Train Loss: 0.2252552 Vali Loss: 0.1741610 Test Loss: 0.1985694
+Validation loss decreased (inf --> 0.174161).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 2 cost time: 23.066838026046753
+Epoch: 2, Steps: 2265 | Train Loss: 0.1957184 Vali Loss: 0.1710703 Test Loss: 0.1951808
+Validation loss decreased (0.174161 --> 0.171070).  Saving model ...
+Updating learning rate to 0.00025
+Epoch: 3 cost time: 22.45715308189392
+Epoch: 3, Steps: 2265 | Train Loss: 0.1941017 Vali Loss: 0.1704081 Test Loss: 0.1945318
+Validation loss decreased (0.171070 --> 0.170408).  Saving model ...
+Updating learning rate to 0.000125
+Epoch: 4 cost time: 21.935675621032715
+Epoch: 4, Steps: 2265 | Train Loss: 0.1935488 Vali Loss: 0.1699940 Test Loss: 0.1940596
+Validation loss decreased (0.170408 --> 0.169994).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 5 cost time: 23.14758801460266
+Epoch: 5, Steps: 2265 | Train Loss: 0.1932638 Vali Loss: 0.1700534 Test Loss: 0.1940209
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.125e-05
+Epoch: 6 cost time: 22.288480043411255
+Epoch: 6, Steps: 2265 | Train Loss: 0.1931578 Vali Loss: 0.1697675 Test Loss: 0.1937119
+Validation loss decreased (0.169994 --> 0.169768).  Saving model ...
+Updating learning rate to 1.5625e-05
+Epoch: 7 cost time: 22.551090478897095
+Epoch: 7, Steps: 2265 | Train Loss: 0.1930953 Vali Loss: 0.1697350 Test Loss: 0.1937404
+Validation loss decreased (0.169768 --> 0.169735).  Saving model ...
+Updating learning rate to 7.8125e-06
+Epoch: 8 cost time: 22.973443031311035
+Epoch: 8, Steps: 2265 | Train Loss: 0.1930525 Vali Loss: 0.1697119 Test Loss: 0.1937708
+Validation loss decreased (0.169735 --> 0.169712).  Saving model ...
+Updating learning rate to 3.90625e-06
+Epoch: 9 cost time: 22.919809341430664
+Epoch: 9, Steps: 2265 | Train Loss: 0.1930379 Vali Loss: 0.1697507 Test Loss: 0.1938252
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.953125e-06
+Epoch: 10 cost time: 22.98641085624695
+Epoch: 10, Steps: 2265 | Train Loss: 0.1930262 Vali Loss: 0.1697376 Test Loss: 0.1937680
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 9.765625e-07
+>>>>>>>testing : Exchange_96_192_DLinear_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 5069
+mse:0.19376850128173828, mae:0.2804165482521057
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.04M
+INFO: Trainable parameter count: 0.04M
+Model(
+  37.25 k, 100.000% Params, 11.87 MMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 38.52 KMac, 0.324% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 38.52 KMac, 0.324% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 38.52 KMac, 0.324% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(18.62 k, 50.000% Params, 5.92 MMac, 49.838% MACs, in_features=96, out_features=192, bias=True)
+  (Linear_Trend): Linear(18.62 k, 50.000% Params, 5.92 MMac, 49.838% MACs, in_features=96, out_features=192, bias=True)
+)
+Computational complexity:       11.87 MMac
+Number of parameters:           37.25 k 

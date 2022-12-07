@@ -1,0 +1,68 @@
+Args in experiment:
+Namespace(is_training=1, model_id='ili_104_48', model='DLinear', data='custom', root_path='./dataset/', data_path='national_illness.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=104, label_len=48, pred_len=48, individual=False, embed_type=0, enc_in=8, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=8, patience=3, learning_rate=0.0005, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:0
+>>>>>>>start training : ili_104_48_DLinear_custom_ftM_sl104_ll48_pl48_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 525
+val 50
+test 146
+Epoch: 1 cost time: 4.298299074172974
+Epoch: 1, Steps: 65 | Train Loss: 0.8673667 Vali Loss: 0.3556005 Test Loss: 3.3168802
+Validation loss decreased (inf --> 0.355600).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 2 cost time: 1.5631873607635498
+Epoch: 2, Steps: 65 | Train Loss: 0.6042938 Vali Loss: 0.2584367 Test Loss: 2.5771382
+Validation loss decreased (0.355600 --> 0.258437).  Saving model ...
+Updating learning rate to 0.00025
+Epoch: 3 cost time: 1.3907501697540283
+Epoch: 3, Steps: 65 | Train Loss: 0.5491416 Vali Loss: 0.2540334 Test Loss: 2.5994756
+Validation loss decreased (0.258437 --> 0.254033).  Saving model ...
+Updating learning rate to 0.000125
+Epoch: 4 cost time: 1.690737247467041
+Epoch: 4, Steps: 65 | Train Loss: 0.5356589 Vali Loss: 0.2513279 Test Loss: 2.5723388
+Validation loss decreased (0.254033 --> 0.251328).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 5 cost time: 1.4858591556549072
+Epoch: 5, Steps: 65 | Train Loss: 0.5322555 Vali Loss: 0.2527911 Test Loss: 2.5476077
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.125e-05
+Epoch: 6 cost time: 1.5472772121429443
+Epoch: 6, Steps: 65 | Train Loss: 0.5297989 Vali Loss: 0.2464254 Test Loss: 2.5426905
+Validation loss decreased (0.251328 --> 0.246425).  Saving model ...
+Updating learning rate to 1.5625e-05
+Epoch: 7 cost time: 1.5250728130340576
+Epoch: 7, Steps: 65 | Train Loss: 0.5243047 Vali Loss: 0.2457433 Test Loss: 2.5401051
+Validation loss decreased (0.246425 --> 0.245743).  Saving model ...
+Updating learning rate to 7.8125e-06
+Epoch: 8 cost time: 1.7828330993652344
+Epoch: 8, Steps: 65 | Train Loss: 0.5277306 Vali Loss: 0.2500887 Test Loss: 2.5381656
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.90625e-06
+Epoch: 9 cost time: 1.372943639755249
+Epoch: 9, Steps: 65 | Train Loss: 0.5234004 Vali Loss: 0.2500385 Test Loss: 2.5376678
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.953125e-06
+Epoch: 10 cost time: 1.350193738937378
+Epoch: 10, Steps: 65 | Train Loss: 0.5278321 Vali Loss: 0.2502311 Test Loss: 2.5374246
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ili_104_48_DLinear_custom_ftM_sl104_ll48_pl48_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 146
+mse:2.540104866027832, mae:1.141984224319458
+INFO: Trainable parameter count: 0.00M
+INFO: Trainable parameter count: 0.01M
+INFO: Trainable parameter count: 0.01M
+INFO: Trainable parameter count: 0.01M
+Model(
+  10.08 k, 100.000% Params, 70.88 KMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 896.0 Mac, 1.264% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 896.0 Mac, 1.264% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 896.0 Mac, 1.264% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(5.04 k, 50.000% Params, 34.99 KMac, 49.368% MACs, in_features=104, out_features=48, bias=True)
+  (Linear_Trend): Linear(5.04 k, 50.000% Params, 34.99 KMac, 49.368% MACs, in_features=104, out_features=48, bias=True)
+)
+Computational complexity:       70.88 KMac
+Number of parameters:           10.08 k 

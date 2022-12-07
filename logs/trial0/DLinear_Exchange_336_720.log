@@ -1,0 +1,52 @@
+Args in experiment:
+Namespace(is_training=1, model_id='Exchange_336_720', model='DLinear', data='custom', root_path='./dataset/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=336, label_len=48, pred_len=720, individual=False, embed_type=0, enc_in=8, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0005, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:0
+>>>>>>>start training : Exchange_336_720_DLinear_custom_ftM_sl336_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4256
+val 41
+test 798
+	iters: 100, epoch: 1 | loss: 0.6386401
+	speed: 0.0422s/iter; left time: 51.9103s
+Epoch: 1 cost time: 4.477949380874634
+Epoch: 1, Steps: 133 | Train Loss: 0.6125983 Vali Loss: 3.5766106 Test Loss: 0.8976465
+Validation loss decreased (inf --> 3.576611).  Saving model ...
+Updating learning rate to 0.0005
+	iters: 100, epoch: 2 | loss: 0.4675981
+	speed: 0.0607s/iter; left time: 66.6661s
+Epoch: 2 cost time: 2.668726682662964
+Epoch: 2, Steps: 133 | Train Loss: 0.5626728 Vali Loss: 3.9286814 Test Loss: 1.0945365
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.00025
+	iters: 100, epoch: 3 | loss: 0.5350161
+	speed: 0.0620s/iter; left time: 59.8384s
+Epoch: 3 cost time: 2.6257669925689697
+Epoch: 3, Steps: 133 | Train Loss: 0.5563729 Vali Loss: 4.1991758 Test Loss: 1.3132563
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 0.000125
+	iters: 100, epoch: 4 | loss: 0.5368670
+	speed: 0.0562s/iter; left time: 46.7308s
+Epoch: 4 cost time: 2.627772092819214
+Epoch: 4, Steps: 133 | Train Loss: 0.5541934 Vali Loss: 4.0212927 Test Loss: 1.1943808
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : Exchange_336_720_DLinear_custom_ftM_sl336_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 798
+INFO: Trainable parameter count: 0.24M
+INFO: Trainable parameter count: 0.24M
+INFO: Trainable parameter count: 0.48M
+INFO: Trainable parameter count: 0.49M
+Model(
+  485.28 k, 100.000% Params, 3.88 MMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 2.88 KMac, 0.074% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 2.88 KMac, 0.074% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 2.88 KMac, 0.074% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(242.64 k, 50.000% Params, 1.94 MMac, 49.963% MACs, in_features=336, out_features=720, bias=True)
+  (Linear_Trend): Linear(242.64 k, 50.000% Params, 1.94 MMac, 49.963% MACs, in_features=336, out_features=720, bias=True)
+)
+Computational complexity:       3.88 MMac
+Number of parameters:           485.28 k
+mse:0.897645890712738, mae:0.7266582250595093

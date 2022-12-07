@@ -1,0 +1,62 @@
+Args in experiment:
+Namespace(is_training=1, model_id='weather_96_720', model='Transformer', data='custom', root_path='./dataset/', data_path='weather.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=720, individual=False, embed_type=0, enc_in=21, dec_in=21, c_out=21, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=2, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=9, use_multi_gpu=False, devices='0,1,2,3', test_flop=False)
+Use GPU: cuda:9
+>>>>>>>start training : weather_96_720_Transformer_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36072
+val 4551
+test 9820
+	iters: 100, epoch: 1 | loss: 0.5806815
+	speed: 0.1710s/iter; left time: 368.4878s
+	iters: 200, epoch: 1 | loss: 0.4542480
+	speed: 0.1087s/iter; left time: 223.2816s
+	iters: 300, epoch: 1 | loss: 0.5571979
+	speed: 0.1077s/iter; left time: 210.4874s
+	iters: 400, epoch: 1 | loss: 0.3924413
+	speed: 0.1074s/iter; left time: 199.3083s
+	iters: 500, epoch: 1 | loss: 0.4359681
+	speed: 0.1078s/iter; left time: 189.2187s
+	iters: 600, epoch: 1 | loss: 0.4812511
+	speed: 0.1079s/iter; left time: 178.6170s
+	iters: 700, epoch: 1 | loss: 0.4447798
+	speed: 0.1086s/iter; left time: 168.8266s
+	iters: 800, epoch: 1 | loss: 0.4508587
+	speed: 0.1075s/iter; left time: 156.4558s
+	iters: 900, epoch: 1 | loss: 0.3300262
+	speed: 0.1075s/iter; left time: 145.7058s
+	iters: 1000, epoch: 1 | loss: 0.4393467
+	speed: 0.1062s/iter; left time: 133.3110s
+	iters: 1100, epoch: 1 | loss: 0.4249265
+	speed: 0.1068s/iter; left time: 123.4035s
+Epoch: 1 cost time: 127.65751838684082
+Epoch: 1, Steps: 1127 | Train Loss: 0.4748324 Vali Loss: 0.8733596 Test Loss: 0.9129129
+Validation loss decreased (inf --> 0.873360).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.2884967
+	speed: 0.3686s/iter; left time: 378.9629s
+	iters: 200, epoch: 2 | loss: 0.3400411
+	speed: 0.1072s/iter; left time: 99.4463s
+	iters: 300, epoch: 2 | loss: 0.3665443
+	speed: 0.1065s/iter; left time: 88.1927s
+	iters: 400, epoch: 2 | loss: 0.2665272
+	speed: 0.1084s/iter; left time: 78.8956s
+	iters: 500, epoch: 2 | loss: 0.2209062
+	speed: 0.1071s/iter; left time: 67.2285s
+	iters: 600, epoch: 2 | loss: 0.2655409
+	speed: 0.1063s/iter; left time: 56.1091s
+	iters: 700, epoch: 2 | loss: 0.2519053
+	speed: 0.1063s/iter; left time: 45.4864s
+	iters: 800, epoch: 2 | loss: 0.3008463
+	speed: 0.1069s/iter; left time: 35.0687s
+	iters: 900, epoch: 2 | loss: 0.3355705
+	speed: 0.1061s/iter; left time: 24.1864s
+	iters: 1000, epoch: 2 | loss: 0.3220995
+	speed: 0.1080s/iter; left time: 13.8194s
+	iters: 1100, epoch: 2 | loss: 0.2173643
+	speed: 0.1087s/iter; left time: 3.0439s
+Epoch: 2 cost time: 122.49624419212341
+Epoch: 2, Steps: 1127 | Train Loss: 0.3269545 Vali Loss: 0.9116750 Test Loss: 1.0093689
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : weather_96_720_Transformer_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 9820
+mse:0.9129133820533752, mae:0.7016392946243286

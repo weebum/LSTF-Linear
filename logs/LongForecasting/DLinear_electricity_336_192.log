@@ -1,0 +1,50 @@
+Args in experiment:
+Namespace(is_training=1, model_id='Electricity_336_192', model='DLinear', data='custom', root_path='./dataset/', data_path='electricity.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=336, label_len=48, pred_len=192, individual=False, embed_type=0, enc_in=321, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=16, patience=3, learning_rate=0.001, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : Electricity_336_192_DLinear_custom_ftM_sl336_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 17885
+val 2441
+test 5069
+Epoch: 1 cost time: 18.446990251541138
+Epoch: 1, Steps: 1117 | Train Loss: 0.1773981 Vali Loss: 0.1379611 Test Loss: 0.1606813
+Validation loss decreased (inf --> 0.137961).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 16.55886459350586
+Epoch: 2, Steps: 1117 | Train Loss: 0.1606563 Vali Loss: 0.1355557 Test Loss: 0.1593442
+Validation loss decreased (0.137961 --> 0.135556).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 3 cost time: 14.179464101791382
+Epoch: 3, Steps: 1117 | Train Loss: 0.1576157 Vali Loss: 0.1326941 Test Loss: 0.1553856
+Validation loss decreased (0.135556 --> 0.132694).  Saving model ...
+Updating learning rate to 0.00025
+Epoch: 4 cost time: 14.429917812347412
+Epoch: 4, Steps: 1117 | Train Loss: 0.1561641 Vali Loss: 0.1315142 Test Loss: 0.1542419
+Validation loss decreased (0.132694 --> 0.131514).  Saving model ...
+Updating learning rate to 0.000125
+Epoch: 5 cost time: 17.734808921813965
+Epoch: 5, Steps: 1117 | Train Loss: 0.1553958 Vali Loss: 0.1310541 Test Loss: 0.1534656
+Validation loss decreased (0.131514 --> 0.131054).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 6 cost time: 17.13186740875244
+Epoch: 6, Steps: 1117 | Train Loss: 0.1549372 Vali Loss: 0.1307964 Test Loss: 0.1536397
+Validation loss decreased (0.131054 --> 0.130796).  Saving model ...
+Updating learning rate to 3.125e-05
+Epoch: 7 cost time: 17.272510051727295
+Epoch: 7, Steps: 1117 | Train Loss: 0.1547408 Vali Loss: 0.1305680 Test Loss: 0.1531503
+Validation loss decreased (0.130796 --> 0.130568).  Saving model ...
+Updating learning rate to 1.5625e-05
+Epoch: 8 cost time: 16.03963351249695
+Epoch: 8, Steps: 1117 | Train Loss: 0.1546057 Vali Loss: 0.1304341 Test Loss: 0.1530047
+Validation loss decreased (0.130568 --> 0.130434).  Saving model ...
+Updating learning rate to 7.8125e-06
+Epoch: 9 cost time: 14.294907331466675
+Epoch: 9, Steps: 1117 | Train Loss: 0.1545708 Vali Loss: 0.1304439 Test Loss: 0.1530406
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.90625e-06
+Epoch: 10 cost time: 14.531784534454346
+Epoch: 10, Steps: 1117 | Train Loss: 0.1545497 Vali Loss: 0.1303567 Test Loss: 0.1530071
+Validation loss decreased (0.130434 --> 0.130357).  Saving model ...
+Updating learning rate to 1.953125e-06
+>>>>>>>testing : Electricity_336_192_DLinear_custom_ftM_sl336_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 5069
+mse:0.1530073583126068, mae:0.25013238191604614

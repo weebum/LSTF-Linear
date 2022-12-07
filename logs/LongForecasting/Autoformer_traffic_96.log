@@ -1,0 +1,19 @@
+Args in experiment:
+Namespace(is_training=1, model_id='traffic_96_96', model='Autoformer', data='custom', root_path='./dataset/', data_path='traffic.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, individual=False, embed_type=0, enc_in=862, dec_in=862, c_out=862, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=3, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=8, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:8
+>>>>>>>start training : traffic_96_96_Autoformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 12089
+val 1661
+test 3413
+Epoch: 1 cost time: 32.220279932022095
+Epoch: 1, Steps: 377 | Train Loss: 0.3819647 Vali Loss: 0.4931909 Test Loss: 0.6296418
+Validation loss decreased (inf --> 0.493191).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 30.083462238311768
+Epoch: 2, Steps: 377 | Train Loss: 0.2553349 Vali Loss: 0.5075580 Test Loss: 0.6969043
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 29.197511911392212
+Epoch: 3, Steps: 377 | Train Loss: 0.2304858 Vali Loss: 0.4689816 Test Loss: 0.6281547
+Validation loss decreased (0.493191 --> 0.468982).  Saving model ...
+Updating learning rate to 2.5e-05

@@ -1,0 +1,111 @@
+Args in experiment:
+Namespace(is_training=1, model_id='weather_96_336', model='Autoformer', data='custom', root_path='./dataset/', data_path='weather.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, individual=False, embed_type=0, enc_in=21, dec_in=21, c_out=21, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=2, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=9, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:9
+>>>>>>>start training : weather_96_336_Autoformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36456
+val 4935
+test 10204
+	iters: 100, epoch: 1 | loss: 0.7433818
+	speed: 0.1616s/iter; left time: 352.0723s
+	iters: 200, epoch: 1 | loss: 0.6023006
+	speed: 0.0994s/iter; left time: 206.7040s
+	iters: 300, epoch: 1 | loss: 0.5028341
+	speed: 0.1006s/iter; left time: 199.1271s
+	iters: 400, epoch: 1 | loss: 0.4884289
+	speed: 0.1011s/iter; left time: 189.9902s
+	iters: 500, epoch: 1 | loss: 0.4903957
+	speed: 0.1024s/iter; left time: 182.1308s
+	iters: 600, epoch: 1 | loss: 0.5129133
+	speed: 0.0997s/iter; left time: 167.3378s
+	iters: 700, epoch: 1 | loss: 0.7273189
+	speed: 0.0988s/iter; left time: 156.0067s
+	iters: 800, epoch: 1 | loss: 0.4905171
+	speed: 0.0991s/iter; left time: 146.4960s
+	iters: 900, epoch: 1 | loss: 0.4795287
+	speed: 0.1008s/iter; left time: 138.9645s
+	iters: 1000, epoch: 1 | loss: 0.4497287
+	speed: 0.1018s/iter; left time: 130.2559s
+	iters: 1100, epoch: 1 | loss: 0.8032941
+	speed: 0.1013s/iter; left time: 119.4468s
+Epoch: 1 cost time: 120.80656599998474
+Epoch: 1, Steps: 1139 | Train Loss: 0.6577242 Vali Loss: 0.6767721 Test Loss: 0.3598432
+Validation loss decreased (inf --> 0.676772).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.5051449
+	speed: 0.5500s/iter; left time: 572.0164s
+	iters: 200, epoch: 2 | loss: 0.8079531
+	speed: 0.1006s/iter; left time: 94.5645s
+	iters: 300, epoch: 2 | loss: 0.7525775
+	speed: 0.0993s/iter; left time: 83.4255s
+	iters: 400, epoch: 2 | loss: 0.8131958
+	speed: 0.0998s/iter; left time: 73.8201s
+	iters: 500, epoch: 2 | loss: 0.7326034
+	speed: 0.1008s/iter; left time: 64.5082s
+	iters: 600, epoch: 2 | loss: 0.5507643
+	speed: 0.0994s/iter; left time: 53.6992s
+	iters: 700, epoch: 2 | loss: 1.0310668
+	speed: 0.1024s/iter; left time: 45.0394s
+	iters: 800, epoch: 2 | loss: 0.7693266
+	speed: 0.1019s/iter; left time: 34.6410s
+	iters: 900, epoch: 2 | loss: 0.5319707
+	speed: 0.1016s/iter; left time: 24.3829s
+	iters: 1000, epoch: 2 | loss: 0.4703161
+	speed: 0.0994s/iter; left time: 13.9150s
+	iters: 1100, epoch: 2 | loss: 0.6859555
+	speed: 0.1008s/iter; left time: 4.0337s
+Epoch: 2 cost time: 115.95454931259155
+Epoch: 2, Steps: 1139 | Train Loss: 0.5878565 Vali Loss: 0.6837665 Test Loss: 0.3874692
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : weather_96_336_Autoformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10204
+mse:0.3598434627056122, mae:0.3969813287258148
+INFO: Trainable parameter count: 0.03M
+INFO: Trainable parameter count: 0.03M
+INFO: Trainable parameter count: 0.07M
+INFO: Trainable parameter count: 0.07M
+INFO: Trainable parameter count: 0.33M
+INFO: Trainable parameter count: 0.33M
+INFO: Trainable parameter count: 0.59M
+INFO: Trainable parameter count: 0.59M
+INFO: Trainable parameter count: 0.86M
+INFO: Trainable parameter count: 0.86M
+INFO: Trainable parameter count: 1.12M
+INFO: Trainable parameter count: 1.12M
+INFO: Trainable parameter count: 2.17M
+INFO: Trainable parameter count: 3.22M
+INFO: Trainable parameter count: 3.48M
+INFO: Trainable parameter count: 3.48M
+INFO: Trainable parameter count: 3.74M
+INFO: Trainable parameter count: 3.74M
+INFO: Trainable parameter count: 4.00M
+INFO: Trainable parameter count: 4.00M
+INFO: Trainable parameter count: 4.27M
+INFO: Trainable parameter count: 4.27M
+INFO: Trainable parameter count: 5.32M
+INFO: Trainable parameter count: 6.36M
+INFO: Trainable parameter count: 6.36M
+INFO: Trainable parameter count: 6.37M
+INFO: Trainable parameter count: 6.63M
+INFO: Trainable parameter count: 6.63M
+INFO: Trainable parameter count: 6.89M
+INFO: Trainable parameter count: 6.89M
+INFO: Trainable parameter count: 7.15M
+INFO: Trainable parameter count: 7.15M
+INFO: Trainable parameter count: 7.42M
+INFO: Trainable parameter count: 7.42M
+INFO: Trainable parameter count: 7.68M
+INFO: Trainable parameter count: 7.68M
+INFO: Trainable parameter count: 7.94M
+INFO: Trainable parameter count: 7.94M
+INFO: Trainable parameter count: 8.20M
+INFO: Trainable parameter count: 8.20M
+INFO: Trainable parameter count: 8.47M
+INFO: Trainable parameter count: 8.47M
+INFO: Trainable parameter count: 9.52M
+INFO: Trainable parameter count: 10.56M
+INFO: Trainable parameter count: 10.60M
+INFO: Trainable parameter count: 10.60M
+INFO: Trainable parameter count: 10.60M
+INFO: Trainable parameter count: 10.61M
+INFO: Trainable parameter count: 10.61M

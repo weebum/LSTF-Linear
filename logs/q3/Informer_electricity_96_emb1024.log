@@ -1,0 +1,247 @@
+Args in experiment:
+Namespace(is_training=1, model_id='electricity_96_96', model='Informer', data='custom', root_path='./dataset/', data_path='electricity.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, individual=False, embed_type=0, enc_in=321, dec_in=321, c_out=321, d_model=1024, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=1, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:1
+>>>>>>>start training : electricity_96_96_Informer_custom_ftM_sl96_ll48_pl96_dm1024_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 18221
+val 2537
+test 5165
+Epoch: 1 cost time: 55.21315002441406
+Epoch: 1, Steps: 569 | Train Loss: 0.3946991 Vali Loss: 0.2383871 Test Loss: 0.3622389
+Validation loss decreased (inf --> 0.238387).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 50.02247095108032
+Epoch: 2, Steps: 569 | Train Loss: 0.1796278 Vali Loss: 0.2236142 Test Loss: 0.3310517
+Validation loss decreased (0.238387 --> 0.223614).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 49.63479256629944
+Epoch: 3, Steps: 569 | Train Loss: 0.1493841 Vali Loss: 0.2180184 Test Loss: 0.3221107
+Validation loss decreased (0.223614 --> 0.218018).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 49.287850856781006
+Epoch: 4, Steps: 569 | Train Loss: 0.1392507 Vali Loss: 0.2143255 Test Loss: 0.3142928
+Validation loss decreased (0.218018 --> 0.214325).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 49.12366199493408
+Epoch: 5, Steps: 569 | Train Loss: 0.1343489 Vali Loss: 0.2121038 Test Loss: 0.3134891
+Validation loss decreased (0.214325 --> 0.212104).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 49.07402729988098
+Epoch: 6, Steps: 569 | Train Loss: 0.1320128 Vali Loss: 0.2117535 Test Loss: 0.3160758
+Validation loss decreased (0.212104 --> 0.211753).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 49.08252143859863
+Epoch: 7, Steps: 569 | Train Loss: 0.1307341 Vali Loss: 0.2100705 Test Loss: 0.3156528
+Validation loss decreased (0.211753 --> 0.210071).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 49.575774908065796
+Epoch: 8, Steps: 569 | Train Loss: 0.1299890 Vali Loss: 0.2099271 Test Loss: 0.3158046
+Validation loss decreased (0.210071 --> 0.209927).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 49.24904155731201
+Epoch: 9, Steps: 569 | Train Loss: 0.1296353 Vali Loss: 0.2097468 Test Loss: 0.3152696
+Validation loss decreased (0.209927 --> 0.209747).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 49.01683306694031
+Epoch: 10, Steps: 569 | Train Loss: 0.1294226 Vali Loss: 0.2107914 Test Loss: 0.3173528
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.953125e-07
+>>>>>>>testing : electricity_96_96_Informer_custom_ftM_sl96_ll48_pl96_dm1024_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 5165
+mse:0.3153577148914337, mae:0.4010476768016815
+INFO: Trainable parameter count: 0.99M
+INFO: Trainable parameter count: 0.99M
+INFO: Trainable parameter count: 1.98M
+INFO: Trainable parameter count: 1.98M
+INFO: Trainable parameter count: 3.03M
+INFO: Trainable parameter count: 3.03M
+INFO: Trainable parameter count: 4.08M
+INFO: Trainable parameter count: 4.08M
+INFO: Trainable parameter count: 5.13M
+INFO: Trainable parameter count: 5.13M
+INFO: Trainable parameter count: 6.18M
+INFO: Trainable parameter count: 6.18M
+INFO: Trainable parameter count: 8.28M
+INFO: Trainable parameter count: 8.28M
+INFO: Trainable parameter count: 10.38M
+INFO: Trainable parameter count: 10.38M
+INFO: Trainable parameter count: 10.38M
+INFO: Trainable parameter count: 10.38M
+INFO: Trainable parameter count: 10.38M
+INFO: Trainable parameter count: 10.38M
+INFO: Trainable parameter count: 11.43M
+INFO: Trainable parameter count: 11.43M
+INFO: Trainable parameter count: 12.48M
+INFO: Trainable parameter count: 12.48M
+INFO: Trainable parameter count: 13.53M
+INFO: Trainable parameter count: 13.53M
+INFO: Trainable parameter count: 14.58M
+INFO: Trainable parameter count: 14.58M
+INFO: Trainable parameter count: 16.68M
+INFO: Trainable parameter count: 16.68M
+INFO: Trainable parameter count: 18.78M
+INFO: Trainable parameter count: 18.78M
+INFO: Trainable parameter count: 18.78M
+INFO: Trainable parameter count: 18.78M
+INFO: Trainable parameter count: 18.78M
+INFO: Trainable parameter count: 18.78M
+INFO: Trainable parameter count: 21.93M
+INFO: Trainable parameter count: 21.93M
+INFO: Trainable parameter count: 21.93M
+INFO: Trainable parameter count: 21.93M
+INFO: Trainable parameter count: 21.93M
+INFO: Trainable parameter count: 21.93M
+INFO: Trainable parameter count: 22.98M
+INFO: Trainable parameter count: 22.98M
+INFO: Trainable parameter count: 24.03M
+INFO: Trainable parameter count: 24.03M
+INFO: Trainable parameter count: 25.08M
+INFO: Trainable parameter count: 25.08M
+INFO: Trainable parameter count: 26.13M
+INFO: Trainable parameter count: 26.13M
+INFO: Trainable parameter count: 27.18M
+INFO: Trainable parameter count: 27.18M
+INFO: Trainable parameter count: 28.23M
+INFO: Trainable parameter count: 28.23M
+INFO: Trainable parameter count: 29.28M
+INFO: Trainable parameter count: 29.28M
+INFO: Trainable parameter count: 30.33M
+INFO: Trainable parameter count: 30.33M
+INFO: Trainable parameter count: 32.42M
+INFO: Trainable parameter count: 32.43M
+INFO: Trainable parameter count: 34.52M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.53M
+INFO: Trainable parameter count: 34.86M
+INFO: Trainable parameter count: 34.86M
+Model(
+  34.84 M, 99.947% Params, 3.42 GMac, 100.000% MACs, 
+  (enc_embedding): DataEmbedding(
+    990.21 k, 2.840% Params, 95.06 MMac, 2.777% MACs, 
+    (value_embedding): TokenEmbedding(
+      986.11 k, 2.829% Params, 94.67 MMac, 2.765% MACs, 
+      (tokenConv): Conv1d(986.11 k, 2.829% Params, 94.67 MMac, 2.765% MACs, 321, 1024, kernel_size=(3,), stride=(1,), padding=(1,), bias=False, padding_mode=circular)
+    )
+    (position_embedding): PositionalEmbedding(0, 0.000% Params, 0.0 Mac, 0.000% MACs, )
+    (temporal_embedding): TimeFeatureEmbedding(
+      4.1 k, 0.012% Params, 393.22 KMac, 0.011% MACs, 
+      (embed): Linear(4.1 k, 0.012% Params, 393.22 KMac, 0.011% MACs, in_features=4, out_features=1024, bias=False)
+    )
+    (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+  )
+  (dec_embedding): DataEmbedding(
+    990.21 k, 2.840% Params, 142.59 MMac, 4.165% MACs, 
+    (value_embedding): TokenEmbedding(
+      986.11 k, 2.829% Params, 142.0 MMac, 4.148% MACs, 
+      (tokenConv): Conv1d(986.11 k, 2.829% Params, 142.0 MMac, 4.148% MACs, 321, 1024, kernel_size=(3,), stride=(1,), padding=(1,), bias=False, padding_mode=circular)
+    )
+    (position_embedding): PositionalEmbedding(0, 0.000% Params, 0.0 Mac, 0.000% MACs, )
+    (temporal_embedding): TimeFeatureEmbedding(
+      4.1 k, 0.012% Params, 589.82 KMac, 0.017% MACs, 
+      (embed): Linear(4.1 k, 0.012% Params, 589.82 KMac, 0.017% MACs, in_features=4, out_features=1024, bias=False)
+    )
+    (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+  )
+  (encoder): Encoder(
+    19.94 M, 57.197% Params, 1.53 GMac, 44.559% MACs, 
+    (attn_layers): ModuleList(
+      16.79 M, 48.165% Params, 1.22 GMac, 35.540% MACs, 
+      (0): EncoderLayer(
+        8.4 M, 24.083% Params, 805.61 MMac, 23.530% MACs, 
+        (attention): AttentionLayer(
+          4.2 M, 12.043% Params, 402.66 MMac, 11.761% MACs, 
+          (inner_attention): ProbAttention(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(1.05 M, 3.011% Params, 100.66 MMac, 2.940% MACs, in_features=1024, out_features=1024, bias=True)
+          (key_projection): Linear(1.05 M, 3.011% Params, 100.66 MMac, 2.940% MACs, in_features=1024, out_features=1024, bias=True)
+          (value_projection): Linear(1.05 M, 3.011% Params, 100.66 MMac, 2.940% MACs, in_features=1024, out_features=1024, bias=True)
+          (out_projection): Linear(1.05 M, 3.011% Params, 100.66 MMac, 2.940% MACs, in_features=1024, out_features=1024, bias=True)
+        )
+        (conv1): Conv1d(2.1 M, 6.021% Params, 201.52 MMac, 5.886% MACs, 1024, 2048, kernel_size=(1,), stride=(1,))
+        (conv2): Conv1d(2.1 M, 6.018% Params, 201.42 MMac, 5.883% MACs, 2048, 1024, kernel_size=(1,), stride=(1,))
+        (norm1): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+      (1): EncoderLayer(
+        8.4 M, 24.083% Params, 411.2 MMac, 12.010% MACs, 
+        (attention): AttentionLayer(
+          4.2 M, 12.043% Params, 205.52 MMac, 6.003% MACs, 
+          (inner_attention): ProbAttention(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(1.05 M, 3.011% Params, 51.38 MMac, 1.501% MACs, in_features=1024, out_features=1024, bias=True)
+          (key_projection): Linear(1.05 M, 3.011% Params, 51.38 MMac, 1.501% MACs, in_features=1024, out_features=1024, bias=True)
+          (value_projection): Linear(1.05 M, 3.011% Params, 51.38 MMac, 1.501% MACs, in_features=1024, out_features=1024, bias=True)
+          (out_projection): Linear(1.05 M, 3.011% Params, 51.38 MMac, 1.501% MACs, in_features=1024, out_features=1024, bias=True)
+        )
+        (conv1): Conv1d(2.1 M, 6.021% Params, 102.86 MMac, 3.004% MACs, 1024, 2048, kernel_size=(1,), stride=(1,))
+        (conv2): Conv1d(2.1 M, 6.018% Params, 102.81 MMac, 3.003% MACs, 2048, 1024, kernel_size=(1,), stride=(1,))
+        (norm1): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+    )
+    (conv_layers): ModuleList(
+      3.15 M, 9.032% Params, 308.78 MMac, 9.019% MACs, 
+      (0): ConvLayer(
+        3.15 M, 9.032% Params, 308.78 MMac, 9.019% MACs, 
+        (downConv): Conv1d(3.15 M, 9.026% Params, 308.38 MMac, 9.007% MACs, 1024, 1024, kernel_size=(3,), stride=(1,), padding=(2,), padding_mode=circular)
+        (norm): BatchNorm1d(2.05 k, 0.006% Params, 200.7 KMac, 0.006% MACs, 1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (activation): ELU(0, 0.000% Params, 100.35 KMac, 0.003% MACs, alpha=1.0)
+        (maxPool): MaxPool1d(0, 0.000% Params, 100.35 KMac, 0.003% MACs, kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+      )
+    )
+    (norm): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+  )
+  (decoder): Decoder(
+    12.92 M, 37.069% Params, 1.66 GMac, 48.500% MACs, 
+    (layers): ModuleList(
+      12.59 M, 36.125% Params, 1.61 GMac, 47.117% MACs, 
+      (0): DecoderLayer(
+        12.59 M, 36.125% Params, 1.61 GMac, 47.117% MACs, 
+        (self_attention): AttentionLayer(
+          4.2 M, 12.043% Params, 603.98 MMac, 17.641% MACs, 
+          (inner_attention): ProbAttention(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(1.05 M, 3.011% Params, 151.0 MMac, 4.410% MACs, in_features=1024, out_features=1024, bias=True)
+          (key_projection): Linear(1.05 M, 3.011% Params, 151.0 MMac, 4.410% MACs, in_features=1024, out_features=1024, bias=True)
+          (value_projection): Linear(1.05 M, 3.011% Params, 151.0 MMac, 4.410% MACs, in_features=1024, out_features=1024, bias=True)
+          (out_projection): Linear(1.05 M, 3.011% Params, 151.0 MMac, 4.410% MACs, in_features=1024, out_features=1024, bias=True)
+        )
+        (cross_attention): AttentionLayer(
+          4.2 M, 12.043% Params, 404.75 MMac, 11.822% MACs, 
+          (inner_attention): ProbAttention(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(1.05 M, 3.011% Params, 151.0 MMac, 4.410% MACs, in_features=1024, out_features=1024, bias=True)
+          (key_projection): Linear(1.05 M, 3.011% Params, 51.38 MMac, 1.501% MACs, in_features=1024, out_features=1024, bias=True)
+          (value_projection): Linear(1.05 M, 3.011% Params, 51.38 MMac, 1.501% MACs, in_features=1024, out_features=1024, bias=True)
+          (out_projection): Linear(1.05 M, 3.011% Params, 151.0 MMac, 4.410% MACs, in_features=1024, out_features=1024, bias=True)
+        )
+        (conv1): Conv1d(2.1 M, 6.021% Params, 302.28 MMac, 8.829% MACs, 1024, 2048, kernel_size=(1,), stride=(1,))
+        (conv2): Conv1d(2.1 M, 6.018% Params, 302.14 MMac, 8.825% MACs, 2048, 1024, kernel_size=(1,), stride=(1,))
+        (norm1): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+        (norm3): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+    )
+    (norm): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (1024,), eps=1e-05, elementwise_affine=True)
+    (projection): Linear(329.02 k, 0.944% Params, 47.33 MMac, 1.383% MACs, in_features=1024, out_features=321, bias=True)
+  )
+)
+Computational complexity:       3.42 GMac
+Number of parameters:           34.86 M 

@@ -1,0 +1,76 @@
+Args in experiment:
+Namespace(is_training=1, model_id='Exchange_96_336', model='DLinear', data='custom', root_path='./dataset/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, individual=False, embed_type=0, enc_in=8, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0005, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=1, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:1
+>>>>>>>start training : Exchange_96_336_DLinear_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4880
+val 425
+test 1182
+	iters: 100, epoch: 1 | loss: 0.4078417
+	speed: 0.0448s/iter; left time: 63.6236s
+Epoch: 1 cost time: 4.827578067779541
+Epoch: 1, Steps: 152 | Train Loss: 0.4767675 Vali Loss: 1.1159303 Test Loss: 0.3377657
+Validation loss decreased (inf --> 1.115930).  Saving model ...
+Updating learning rate to 0.0005
+	iters: 100, epoch: 2 | loss: 0.3512284
+	speed: 0.0580s/iter; left time: 73.6565s
+Epoch: 2 cost time: 2.4120569229125977
+Epoch: 2, Steps: 152 | Train Loss: 0.3883412 Vali Loss: 1.0139556 Test Loss: 0.3175367
+Validation loss decreased (1.115930 --> 1.013956).  Saving model ...
+Updating learning rate to 0.00025
+	iters: 100, epoch: 3 | loss: 0.3678522
+	speed: 0.0575s/iter; left time: 64.2115s
+Epoch: 3 cost time: 2.506416082382202
+Epoch: 3, Steps: 152 | Train Loss: 0.3795102 Vali Loss: 0.9934797 Test Loss: 0.3130547
+Validation loss decreased (1.013956 --> 0.993480).  Saving model ...
+Updating learning rate to 0.000125
+	iters: 100, epoch: 4 | loss: 0.3696679
+	speed: 0.0591s/iter; left time: 57.0719s
+Epoch: 4 cost time: 2.4792897701263428
+Epoch: 4, Steps: 152 | Train Loss: 0.3766071 Vali Loss: 1.0192512 Test Loss: 0.3220866
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-05
+	iters: 100, epoch: 5 | loss: 0.4331813
+	speed: 0.0564s/iter; left time: 45.8319s
+Epoch: 5 cost time: 2.3865983486175537
+Epoch: 5, Steps: 152 | Train Loss: 0.3752480 Vali Loss: 0.9563688 Test Loss: 0.3025188
+Validation loss decreased (0.993480 --> 0.956369).  Saving model ...
+Updating learning rate to 3.125e-05
+	iters: 100, epoch: 6 | loss: 0.3447106
+	speed: 0.0581s/iter; left time: 38.4104s
+Epoch: 6 cost time: 2.4513392448425293
+Epoch: 6, Steps: 152 | Train Loss: 0.3749666 Vali Loss: 0.9710958 Test Loss: 0.3080101
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-05
+	iters: 100, epoch: 7 | loss: 0.3556105
+	speed: 0.0590s/iter; left time: 30.0111s
+Epoch: 7 cost time: 2.561765193939209
+Epoch: 7, Steps: 152 | Train Loss: 0.3744701 Vali Loss: 0.9592292 Test Loss: 0.3052971
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-06
+	iters: 100, epoch: 8 | loss: 0.4726602
+	speed: 0.0546s/iter; left time: 19.5077s
+Epoch: 8 cost time: 2.4092319011688232
+Epoch: 8, Steps: 152 | Train Loss: 0.3746611 Vali Loss: 0.9770995 Test Loss: 0.3095589
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : Exchange_96_336_DLinear_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1182
+INFO: Trainable parameter count: 0.03M
+INFO: Trainable parameter count: 0.03M
+INFO: Trainable parameter count: 0.06M
+INFO: Trainable parameter count: 0.07M
+Model(
+  65.18 k, 100.000% Params, 517.73 KMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 960.0 Mac, 0.185% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 960.0 Mac, 0.185% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 960.0 Mac, 0.185% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(32.59 k, 50.000% Params, 258.38 KMac, 49.907% MACs, in_features=96, out_features=336, bias=True)
+  (Linear_Trend): Linear(32.59 k, 50.000% Params, 258.38 KMac, 49.907% MACs, in_features=96, out_features=336, bias=True)
+)
+Computational complexity:       517.73 KMac
+Number of parameters:           65.18 k 
+mse:0.3025189936161041, mae:0.41596075892448425

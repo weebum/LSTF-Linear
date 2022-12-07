@@ -1,0 +1,333 @@
+Args in experiment:
+Namespace(is_training=1, model_id='electricity_96_336', model='Transformer', data='custom', root_path='./dataset/', data_path='electricity.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, individual=False, embed_type=0, enc_in=321, dec_in=321, c_out=321, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=1, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:1
+>>>>>>>start training : electricity_96_336_Transformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 17981
+val 2297
+test 4925
+	iters: 100, epoch: 1 | loss: 0.3398193
+	speed: 0.2680s/iter; left time: 1477.0989s
+	iters: 200, epoch: 1 | loss: 0.2774622
+	speed: 0.0990s/iter; left time: 535.4991s
+	iters: 300, epoch: 1 | loss: 0.2408665
+	speed: 0.1008s/iter; left time: 535.2076s
+	iters: 400, epoch: 1 | loss: 0.2369997
+	speed: 0.0991s/iter; left time: 516.1500s
+	iters: 500, epoch: 1 | loss: 0.2233257
+	speed: 0.0854s/iter; left time: 436.2807s
+Epoch: 1 cost time: 70.41484475135803
+Epoch: 1, Steps: 561 | Train Loss: 0.3081422 Vali Loss: 0.2725826 Test Loss: 0.3243663
+Validation loss decreased (inf --> 0.272583).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.2157338
+	speed: 0.3448s/iter; left time: 1707.0032s
+	iters: 200, epoch: 2 | loss: 0.1934460
+	speed: 0.0866s/iter; left time: 420.0585s
+	iters: 300, epoch: 2 | loss: 0.1839221
+	speed: 0.0840s/iter; left time: 398.7982s
+	iters: 400, epoch: 2 | loss: 0.1685477
+	speed: 0.0843s/iter; left time: 391.8684s
+	iters: 500, epoch: 2 | loss: 0.1608128
+	speed: 0.0848s/iter; left time: 386.0244s
+Epoch: 2 cost time: 49.584190368652344
+Epoch: 2, Steps: 561 | Train Loss: 0.1877370 Vali Loss: 0.2235165 Test Loss: 0.2805826
+Validation loss decreased (0.272583 --> 0.223517).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.1584018
+	speed: 0.3621s/iter; left time: 1589.0527s
+	iters: 200, epoch: 3 | loss: 0.1539940
+	speed: 0.0914s/iter; left time: 391.8284s
+	iters: 300, epoch: 3 | loss: 0.1385819
+	speed: 0.0872s/iter; left time: 365.1097s
+	iters: 400, epoch: 3 | loss: 0.1563492
+	speed: 0.0844s/iter; left time: 345.1014s
+	iters: 500, epoch: 3 | loss: 0.1449016
+	speed: 0.0805s/iter; left time: 321.2113s
+Epoch: 3 cost time: 50.40434122085571
+Epoch: 3, Steps: 561 | Train Loss: 0.1513236 Vali Loss: 0.2232208 Test Loss: 0.2812310
+Validation loss decreased (0.223517 --> 0.223221).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.1446431
+	speed: 0.3607s/iter; left time: 1380.8112s
+	iters: 200, epoch: 4 | loss: 0.1423848
+	speed: 0.0858s/iter; left time: 319.8222s
+	iters: 300, epoch: 4 | loss: 0.1382139
+	speed: 0.0863s/iter; left time: 312.9493s
+	iters: 400, epoch: 4 | loss: 0.1327656
+	speed: 0.0845s/iter; left time: 297.9544s
+	iters: 500, epoch: 4 | loss: 0.1420681
+	speed: 0.0846s/iter; left time: 289.9760s
+Epoch: 4 cost time: 49.848522901535034
+Epoch: 4, Steps: 561 | Train Loss: 0.1411728 Vali Loss: 0.2193349 Test Loss: 0.2767036
+Validation loss decreased (0.223221 --> 0.219335).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.1374976
+	speed: 0.3737s/iter; left time: 1220.7610s
+	iters: 200, epoch: 5 | loss: 0.1410886
+	speed: 0.0835s/iter; left time: 264.6024s
+	iters: 300, epoch: 5 | loss: 0.1415448
+	speed: 0.0853s/iter; left time: 261.7352s
+	iters: 400, epoch: 5 | loss: 0.1386084
+	speed: 0.0783s/iter; left time: 232.2256s
+	iters: 500, epoch: 5 | loss: 0.1368582
+	speed: 0.0830s/iter; left time: 237.9738s
+Epoch: 5 cost time: 48.45066595077515
+Epoch: 5, Steps: 561 | Train Loss: 0.1354998 Vali Loss: 0.2148122 Test Loss: 0.2742875
+Validation loss decreased (0.219335 --> 0.214812).  Saving model ...
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.1348900
+	speed: 0.3575s/iter; left time: 967.5149s
+	iters: 200, epoch: 6 | loss: 0.1341762
+	speed: 0.0854s/iter; left time: 222.4910s
+	iters: 300, epoch: 6 | loss: 0.1309536
+	speed: 0.0869s/iter; left time: 217.8373s
+	iters: 400, epoch: 6 | loss: 0.1293344
+	speed: 0.0832s/iter; left time: 200.2617s
+	iters: 500, epoch: 6 | loss: 0.1385614
+	speed: 0.0864s/iter; left time: 199.1564s
+Epoch: 6 cost time: 50.300509452819824
+Epoch: 6, Steps: 561 | Train Loss: 0.1323797 Vali Loss: 0.2136521 Test Loss: 0.2759623
+Validation loss decreased (0.214812 --> 0.213652).  Saving model ...
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.1260691
+	speed: 0.3818s/iter; left time: 819.0640s
+	iters: 200, epoch: 7 | loss: 0.1329451
+	speed: 0.0885s/iter; left time: 181.0532s
+	iters: 300, epoch: 7 | loss: 0.1340483
+	speed: 0.0803s/iter; left time: 156.1107s
+	iters: 400, epoch: 7 | loss: 0.1314028
+	speed: 0.0846s/iter; left time: 156.0190s
+	iters: 500, epoch: 7 | loss: 0.1323338
+	speed: 0.0869s/iter; left time: 151.6602s
+Epoch: 7 cost time: 49.6332802772522
+Epoch: 7, Steps: 561 | Train Loss: 0.1305916 Vali Loss: 0.2141597 Test Loss: 0.2774929
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.1314110
+	speed: 0.3657s/iter; left time: 579.3391s
+	iters: 200, epoch: 8 | loss: 0.1288991
+	speed: 0.0866s/iter; left time: 128.4783s
+	iters: 300, epoch: 8 | loss: 0.1313456
+	speed: 0.0877s/iter; left time: 121.3164s
+	iters: 400, epoch: 8 | loss: 0.1316167
+	speed: 0.0887s/iter; left time: 113.8958s
+	iters: 500, epoch: 8 | loss: 0.1240638
+	speed: 0.0887s/iter; left time: 105.0270s
+Epoch: 8 cost time: 51.73035645484924
+Epoch: 8, Steps: 561 | Train Loss: 0.1296643 Vali Loss: 0.2137934 Test Loss: 0.2786943
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-07
+	iters: 100, epoch: 9 | loss: 0.1411927
+	speed: 0.3720s/iter; left time: 380.5723s
+	iters: 200, epoch: 9 | loss: 0.1335793
+	speed: 0.0856s/iter; left time: 79.0126s
+	iters: 300, epoch: 9 | loss: 0.1334929
+	speed: 0.0851s/iter; left time: 70.0581s
+	iters: 400, epoch: 9 | loss: 0.1337393
+	speed: 0.0858s/iter; left time: 62.0084s
+	iters: 500, epoch: 9 | loss: 0.1289586
+	speed: 0.0866s/iter; left time: 53.9704s
+Epoch: 9 cost time: 50.35611343383789
+Epoch: 9, Steps: 561 | Train Loss: 0.1291337 Vali Loss: 0.2126746 Test Loss: 0.2792843
+Validation loss decreased (0.213652 --> 0.212675).  Saving model ...
+Updating learning rate to 3.90625e-07
+	iters: 100, epoch: 10 | loss: 0.1276115
+	speed: 0.3665s/iter; left time: 169.3243s
+	iters: 200, epoch: 10 | loss: 0.1356702
+	speed: 0.0886s/iter; left time: 32.0759s
+	iters: 300, epoch: 10 | loss: 0.1249500
+	speed: 0.0910s/iter; left time: 23.8462s
+	iters: 400, epoch: 10 | loss: 0.1321628
+	speed: 0.0869s/iter; left time: 14.0799s
+	iters: 500, epoch: 10 | loss: 0.1346331
+	speed: 0.0800s/iter; left time: 4.9590s
+Epoch: 10 cost time: 50.31606078147888
+Epoch: 10, Steps: 561 | Train Loss: 0.1288900 Vali Loss: 0.2131882 Test Loss: 0.2785071
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.953125e-07
+>>>>>>>testing : electricity_96_336_Transformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 4925
+mse:0.27928420901298523, mae:0.3751436769962311
+INFO: Trainable parameter count: 0.49M
+INFO: Trainable parameter count: 0.50M
+INFO: Trainable parameter count: 0.99M
+INFO: Trainable parameter count: 0.99M
+INFO: Trainable parameter count: 1.25M
+INFO: Trainable parameter count: 1.25M
+INFO: Trainable parameter count: 1.52M
+INFO: Trainable parameter count: 1.52M
+INFO: Trainable parameter count: 1.78M
+INFO: Trainable parameter count: 1.78M
+INFO: Trainable parameter count: 2.04M
+INFO: Trainable parameter count: 2.04M
+INFO: Trainable parameter count: 3.09M
+INFO: Trainable parameter count: 3.09M
+INFO: Trainable parameter count: 4.14M
+INFO: Trainable parameter count: 4.14M
+INFO: Trainable parameter count: 4.14M
+INFO: Trainable parameter count: 4.14M
+INFO: Trainable parameter count: 4.14M
+INFO: Trainable parameter count: 4.14M
+INFO: Trainable parameter count: 4.40M
+INFO: Trainable parameter count: 4.41M
+INFO: Trainable parameter count: 4.67M
+INFO: Trainable parameter count: 4.67M
+INFO: Trainable parameter count: 4.93M
+INFO: Trainable parameter count: 4.93M
+INFO: Trainable parameter count: 5.19M
+INFO: Trainable parameter count: 5.19M
+INFO: Trainable parameter count: 6.24M
+INFO: Trainable parameter count: 6.24M
+INFO: Trainable parameter count: 7.29M
+INFO: Trainable parameter count: 7.29M
+INFO: Trainable parameter count: 7.29M
+INFO: Trainable parameter count: 7.29M
+INFO: Trainable parameter count: 7.29M
+INFO: Trainable parameter count: 7.29M
+INFO: Trainable parameter count: 7.30M
+INFO: Trainable parameter count: 7.30M
+INFO: Trainable parameter count: 7.56M
+INFO: Trainable parameter count: 7.56M
+INFO: Trainable parameter count: 7.82M
+INFO: Trainable parameter count: 7.82M
+INFO: Trainable parameter count: 8.08M
+INFO: Trainable parameter count: 8.08M
+INFO: Trainable parameter count: 8.35M
+INFO: Trainable parameter count: 8.35M
+INFO: Trainable parameter count: 8.61M
+INFO: Trainable parameter count: 8.61M
+INFO: Trainable parameter count: 8.87M
+INFO: Trainable parameter count: 8.87M
+INFO: Trainable parameter count: 9.13M
+INFO: Trainable parameter count: 9.13M
+INFO: Trainable parameter count: 9.40M
+INFO: Trainable parameter count: 9.40M
+INFO: Trainable parameter count: 10.45M
+INFO: Trainable parameter count: 10.45M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.50M
+INFO: Trainable parameter count: 11.67M
+INFO: Trainable parameter count: 11.67M
+Model(
+  11.66 M, 99.921% Params, 2.37 GMac, 100.000% MACs, 
+  (enc_embedding): DataEmbedding(
+    495.1 k, 4.244% Params, 47.53 MMac, 2.009% MACs, 
+    (value_embedding): TokenEmbedding(
+      493.06 k, 4.227% Params, 47.33 MMac, 2.001% MACs, 
+      (tokenConv): Conv1d(493.06 k, 4.227% Params, 47.33 MMac, 2.001% MACs, 321, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False, padding_mode=circular)
+    )
+    (position_embedding): PositionalEmbedding(0, 0.000% Params, 0.0 Mac, 0.000% MACs, )
+    (temporal_embedding): TimeFeatureEmbedding(
+      2.05 k, 0.018% Params, 196.61 KMac, 0.008% MACs, 
+      (embed): Linear(2.05 k, 0.018% Params, 196.61 KMac, 0.008% MACs, in_features=4, out_features=512, bias=False)
+    )
+    (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+  )
+  (dec_embedding): DataEmbedding(
+    495.1 k, 4.244% Params, 190.12 MMac, 8.036% MACs, 
+    (value_embedding): TokenEmbedding(
+      493.06 k, 4.227% Params, 189.33 MMac, 8.003% MACs, 
+      (tokenConv): Conv1d(493.06 k, 4.227% Params, 189.33 MMac, 8.003% MACs, 321, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False, padding_mode=circular)
+    )
+    (position_embedding): PositionalEmbedding(0, 0.000% Params, 0.0 Mac, 0.000% MACs, )
+    (temporal_embedding): TimeFeatureEmbedding(
+      2.05 k, 0.018% Params, 786.43 KMac, 0.033% MACs, 
+      (embed): Linear(2.05 k, 0.018% Params, 786.43 KMac, 0.033% MACs, in_features=4, out_features=512, bias=False)
+    )
+    (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+  )
+  (encoder): Encoder(
+    6.3 M, 54.010% Params, 604.48 MMac, 25.550% MACs, 
+    (attn_layers): ModuleList(
+      6.3 M, 54.010% Params, 604.48 MMac, 25.550% MACs, 
+      (0): EncoderLayer(
+        3.15 M, 27.005% Params, 302.24 MMac, 12.775% MACs, 
+        (attention): AttentionLayer(
+          1.05 M, 9.006% Params, 100.67 MMac, 4.255% MACs, 
+          (inner_attention): FullAttention(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 9.006% Params, 100.86 MMac, 4.263% MACs, 512, 2048, kernel_size=(1,), stride=(1,))
+        (conv2): Conv1d(1.05 M, 8.993% Params, 100.71 MMac, 4.257% MACs, 2048, 512, kernel_size=(1,), stride=(1,))
+        (norm1): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+      (1): EncoderLayer(
+        3.15 M, 27.005% Params, 302.24 MMac, 12.775% MACs, 
+        (attention): AttentionLayer(
+          1.05 M, 9.006% Params, 100.67 MMac, 4.255% MACs, 
+          (inner_attention): FullAttention(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 9.006% Params, 100.86 MMac, 4.263% MACs, 512, 2048, kernel_size=(1,), stride=(1,))
+        (conv2): Conv1d(1.05 M, 8.993% Params, 100.71 MMac, 4.257% MACs, 2048, 512, kernel_size=(1,), stride=(1,))
+        (norm1): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+    )
+    (norm): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+  )
+  (decoder): Decoder(
+    4.37 M, 37.423% Params, 1.52 GMac, 64.405% MACs, 
+    (layers): ModuleList(
+      4.2 M, 36.011% Params, 1.46 GMac, 61.737% MACs, 
+      (0): DecoderLayer(
+        4.2 M, 36.011% Params, 1.46 GMac, 61.737% MACs, 
+        (self_attention): AttentionLayer(
+          1.05 M, 9.006% Params, 402.66 MMac, 17.020% MACs, 
+          (inner_attention): FullAttention(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 2.252% Params, 100.66 MMac, 4.255% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 2.252% Params, 100.66 MMac, 4.255% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 2.252% Params, 100.66 MMac, 4.255% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 2.252% Params, 100.66 MMac, 4.255% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (cross_attention): AttentionLayer(
+          1.05 M, 9.006% Params, 251.66 MMac, 10.637% MACs, 
+          (inner_attention): FullAttention(
+            0, 0.000% Params, 0.0 Mac, 0.000% MACs, 
+            (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+          )
+          (query_projection): Linear(262.66 k, 2.252% Params, 100.66 MMac, 4.255% MACs, in_features=512, out_features=512, bias=True)
+          (key_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+          (value_projection): Linear(262.66 k, 2.252% Params, 25.17 MMac, 1.064% MACs, in_features=512, out_features=512, bias=True)
+          (out_projection): Linear(262.66 k, 2.252% Params, 100.66 MMac, 4.255% MACs, in_features=512, out_features=512, bias=True)
+        )
+        (conv1): Conv1d(1.05 M, 9.006% Params, 403.44 MMac, 17.053% MACs, 512, 2048, kernel_size=(1,), stride=(1,))
+        (conv2): Conv1d(1.05 M, 8.993% Params, 402.85 MMac, 17.028% MACs, 2048, 512, kernel_size=(1,), stride=(1,))
+        (norm1): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+        (norm3): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+        (dropout): Dropout(0, 0.000% Params, 0.0 Mac, 0.000% MACs, p=0.05, inplace=False)
+      )
+    )
+    (norm): LayerNorm(0, 0.000% Params, 0.0 Mac, 0.000% MACs, (512,), eps=1e-05, elementwise_affine=True)
+    (projection): Linear(164.67 k, 1.412% Params, 63.11 MMac, 2.668% MACs, in_features=512, out_features=321, bias=True)
+  )
+)
+Computational complexity:       2.37 GMac
+Number of parameters:           11.67 M 

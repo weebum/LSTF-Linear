@@ -1,0 +1,48 @@
+Args in experiment:
+Namespace(is_training=1, model_id='Exchange_96_192', model='DLinear', data='custom', root_path='./dataset/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=192, individual=False, embed_type=0, enc_in=8, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=8, patience=3, learning_rate=0.0005, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:0
+>>>>>>>start training : Exchange_96_192_DLinear_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5024
+val 569
+test 1326
+Epoch: 1 cost time: 6.023481369018555
+Epoch: 1, Steps: 628 | Train Loss: 0.2792436 Vali Loss: 0.4592135 Test Loss: 0.1858538
+Validation loss decreased (inf --> 0.459214).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 2 cost time: 3.8625736236572266
+Epoch: 2, Steps: 628 | Train Loss: 0.2358613 Vali Loss: 0.3443740 Test Loss: 0.1557003
+Validation loss decreased (0.459214 --> 0.344374).  Saving model ...
+Updating learning rate to 0.00025
+Epoch: 3 cost time: 3.6089515686035156
+Epoch: 3, Steps: 628 | Train Loss: 0.2311141 Vali Loss: 0.4248182 Test Loss: 0.1756842
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.000125
+Epoch: 4 cost time: 3.367764472961426
+Epoch: 4, Steps: 628 | Train Loss: 0.2296502 Vali Loss: 0.3660105 Test Loss: 0.1602843
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 6.25e-05
+Epoch: 5 cost time: 3.4645113945007324
+Epoch: 5, Steps: 628 | Train Loss: 0.2287170 Vali Loss: 0.4607823 Test Loss: 0.1874109
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : Exchange_96_192_DLinear_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1326
+mse:0.1557001918554306, mae:0.2920711636543274
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.04M
+INFO: Trainable parameter count: 0.04M
+Model(
+  37.25 k, 100.000% Params, 296.26 KMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 960.0 Mac, 0.324% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 960.0 Mac, 0.324% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 960.0 Mac, 0.324% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(18.62 k, 50.000% Params, 147.65 KMac, 49.838% MACs, in_features=96, out_features=192, bias=True)
+  (Linear_Trend): Linear(18.62 k, 50.000% Params, 147.65 KMac, 49.838% MACs, in_features=96, out_features=192, bias=True)
+)
+Computational complexity:       296.26 KMac
+Number of parameters:           37.25 k 

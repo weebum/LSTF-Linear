@@ -1,0 +1,60 @@
+Args in experiment:
+Namespace(is_training=1, model_id='Exchange_96_336', model='DLinear', data='custom', root_path='./dataset/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, individual=False, embed_type=0, enc_in=8, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=8, patience=3, learning_rate=0.0005, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:0
+>>>>>>>start training : Exchange_96_336_DLinear_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4880
+val 425
+test 1182
+Epoch: 1 cost time: 5.126725673675537
+Epoch: 1, Steps: 610 | Train Loss: 0.4128218 Vali Loss: 1.4231358 Test Loss: 0.4856341
+Validation loss decreased (inf --> 1.423136).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 2 cost time: 4.2046098709106445
+Epoch: 2, Steps: 610 | Train Loss: 0.3748915 Vali Loss: 1.1104453 Test Loss: 0.3704593
+Validation loss decreased (1.423136 --> 1.110445).  Saving model ...
+Updating learning rate to 0.00025
+Epoch: 3 cost time: 4.112790584564209
+Epoch: 3, Steps: 610 | Train Loss: 0.3697194 Vali Loss: 1.0997639 Test Loss: 0.3574611
+Validation loss decreased (1.110445 --> 1.099764).  Saving model ...
+Updating learning rate to 0.000125
+Epoch: 4 cost time: 4.418278932571411
+Epoch: 4, Steps: 610 | Train Loss: 0.3678959 Vali Loss: 1.0487018 Test Loss: 0.3471256
+Validation loss decreased (1.099764 --> 1.048702).  Saving model ...
+Updating learning rate to 6.25e-05
+Epoch: 5 cost time: 4.169303894042969
+Epoch: 5, Steps: 610 | Train Loss: 0.3671607 Vali Loss: 0.9013637 Test Loss: 0.2966839
+Validation loss decreased (1.048702 --> 0.901364).  Saving model ...
+Updating learning rate to 3.125e-05
+Epoch: 6 cost time: 4.086745023727417
+Epoch: 6, Steps: 610 | Train Loss: 0.3668023 Vali Loss: 0.9026682 Test Loss: 0.2970187
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-05
+Epoch: 7 cost time: 3.7625136375427246
+Epoch: 7, Steps: 610 | Train Loss: 0.3665387 Vali Loss: 0.9259971 Test Loss: 0.3039528
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-06
+Epoch: 8 cost time: 4.071831941604614
+Epoch: 8, Steps: 610 | Train Loss: 0.3664363 Vali Loss: 0.9208149 Test Loss: 0.3021216
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : Exchange_96_336_DLinear_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1182
+mse:0.2966839373111725, mae:0.40995320677757263
+INFO: Trainable parameter count: 0.03M
+INFO: Trainable parameter count: 0.03M
+INFO: Trainable parameter count: 0.06M
+INFO: Trainable parameter count: 0.07M
+Model(
+  65.18 k, 100.000% Params, 517.73 KMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 960.0 Mac, 0.185% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 960.0 Mac, 0.185% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 960.0 Mac, 0.185% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(32.59 k, 50.000% Params, 258.38 KMac, 49.907% MACs, in_features=96, out_features=336, bias=True)
+  (Linear_Trend): Linear(32.59 k, 50.000% Params, 258.38 KMac, 49.907% MACs, in_features=96, out_features=336, bias=True)
+)
+Computational complexity:       517.73 KMac
+Number of parameters:           65.18 k 

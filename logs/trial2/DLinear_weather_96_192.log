@@ -1,0 +1,68 @@
+Args in experiment:
+Namespace(is_training=1, model_id='Exchange_96_192', model='DLinear', data='custom', root_path='./dataset/', data_path='weather.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=192, individual=False, embed_type=0, enc_in=8, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=8, patience=3, learning_rate=0.0005, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=3, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:3
+>>>>>>>start training : Exchange_96_192_DLinear_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 36600
+val 5079
+test 10348
+Epoch: 1 cost time: 15.957907915115356
+Epoch: 1, Steps: 4575 | Train Loss: 0.5656039 Vali Loss: 0.5213629 Test Loss: 0.2368768
+Validation loss decreased (inf --> 0.521363).  Saving model ...
+Updating learning rate to 0.0005
+Epoch: 2 cost time: 14.084550619125366
+Epoch: 2, Steps: 4575 | Train Loss: 0.5504609 Vali Loss: 0.5298823 Test Loss: 0.2299741
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.00025
+Epoch: 3 cost time: 14.55837869644165
+Epoch: 3, Steps: 4575 | Train Loss: 0.5473104 Vali Loss: 0.5185661 Test Loss: 0.2374624
+Validation loss decreased (0.521363 --> 0.518566).  Saving model ...
+Updating learning rate to 0.000125
+Epoch: 4 cost time: 14.660424947738647
+Epoch: 4, Steps: 4575 | Train Loss: 0.5457633 Vali Loss: 0.5223452 Test Loss: 0.2339319
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-05
+Epoch: 5 cost time: 14.400010824203491
+Epoch: 5, Steps: 4575 | Train Loss: 0.5449895 Vali Loss: 0.5180076 Test Loss: 0.2385589
+Validation loss decreased (0.518566 --> 0.518008).  Saving model ...
+Updating learning rate to 3.125e-05
+Epoch: 6 cost time: 14.29624056816101
+Epoch: 6, Steps: 4575 | Train Loss: 0.5446287 Vali Loss: 0.5200737 Test Loss: 0.2354327
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-05
+Epoch: 7 cost time: 14.379953384399414
+Epoch: 7, Steps: 4575 | Train Loss: 0.5444188 Vali Loss: 0.5178009 Test Loss: 0.2369253
+Validation loss decreased (0.518008 --> 0.517801).  Saving model ...
+Updating learning rate to 7.8125e-06
+Epoch: 8 cost time: 14.581692934036255
+Epoch: 8, Steps: 4575 | Train Loss: 0.5443086 Vali Loss: 0.5190686 Test Loss: 0.2355288
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.90625e-06
+Epoch: 9 cost time: 14.5390784740448
+Epoch: 9, Steps: 4575 | Train Loss: 0.5442339 Vali Loss: 0.5185030 Test Loss: 0.2357510
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.953125e-06
+Epoch: 10 cost time: 14.482349395751953
+Epoch: 10, Steps: 4575 | Train Loss: 0.5442016 Vali Loss: 0.5182623 Test Loss: 0.2354888
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : Exchange_96_192_DLinear_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10348
+mse:0.2354888916015625, mae:0.29214709997177124
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.04M
+INFO: Trainable parameter count: 0.04M
+Model(
+  37.25 k, 100.000% Params, 777.05 KMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 2.52 KMac, 0.324% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 2.52 KMac, 0.324% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 2.52 KMac, 0.324% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(18.62 k, 50.000% Params, 387.26 KMac, 49.838% MACs, in_features=96, out_features=192, bias=True)
+  (Linear_Trend): Linear(18.62 k, 50.000% Params, 387.26 KMac, 49.838% MACs, in_features=96, out_features=192, bias=True)
+)
+Computational complexity:       777.05 KMac
+Number of parameters:           37.25 k 

@@ -1,0 +1,114 @@
+Args in experiment:
+Namespace(is_training=1, model_id='ili_36_60', model='Transformer', data='custom', root_path='./dataset/', data_path='national_illness.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=36, label_len=18, pred_len=60, individual=False, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=7, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:7
+>>>>>>>start training : ili_36_60_Transformer_custom_ftM_sl36_ll18_pl60_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 581
+val 38
+test 134
+Epoch: 1 cost time: 5.664215564727783
+Epoch: 1, Steps: 18 | Train Loss: 0.7639002 Vali Loss: 0.4774652 Test Loss: 4.5630932
+Validation loss decreased (inf --> 0.477465).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 2.1944897174835205
+Epoch: 2, Steps: 18 | Train Loss: 0.5268973 Vali Loss: 0.4226541 Test Loss: 5.0395317
+Validation loss decreased (0.477465 --> 0.422654).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 2.1629281044006348
+Epoch: 3, Steps: 18 | Train Loss: 0.4597863 Vali Loss: 0.4156858 Test Loss: 5.2287903
+Validation loss decreased (0.422654 --> 0.415686).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 2.2919301986694336
+Epoch: 4, Steps: 18 | Train Loss: 0.4347696 Vali Loss: 0.3857095 Test Loss: 5.0887918
+Validation loss decreased (0.415686 --> 0.385709).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 2.3426589965820312
+Epoch: 5, Steps: 18 | Train Loss: 0.4196418 Vali Loss: 0.3624566 Test Loss: 4.9761724
+Validation loss decreased (0.385709 --> 0.362457).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 2.2416491508483887
+Epoch: 6, Steps: 18 | Train Loss: 0.4124275 Vali Loss: 0.3571033 Test Loss: 5.0671411
+Validation loss decreased (0.362457 --> 0.357103).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 2.085948944091797
+Epoch: 7, Steps: 18 | Train Loss: 0.4090720 Vali Loss: 0.3662538 Test Loss: 5.0626135
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 2.2287991046905518
+Epoch: 8, Steps: 18 | Train Loss: 0.4086640 Vali Loss: 0.3718086 Test Loss: 5.0715199
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 2.135780096054077
+Epoch: 9, Steps: 18 | Train Loss: 0.4069773 Vali Loss: 0.3670961 Test Loss: 5.0460906
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ili_36_60_Transformer_custom_ftM_sl36_ll18_pl60_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 134
+mse:5.067140579223633, mae:1.5024280548095703
+INFO: Trainable parameter count: 0.01M
+INFO: Trainable parameter count: 0.01M
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.03M
+INFO: Trainable parameter count: 0.29M
+INFO: Trainable parameter count: 0.29M
+INFO: Trainable parameter count: 0.55M
+INFO: Trainable parameter count: 0.55M
+INFO: Trainable parameter count: 0.81M
+INFO: Trainable parameter count: 0.81M
+INFO: Trainable parameter count: 1.08M
+INFO: Trainable parameter count: 1.08M
+INFO: Trainable parameter count: 2.12M
+INFO: Trainable parameter count: 2.13M
+INFO: Trainable parameter count: 3.18M
+INFO: Trainable parameter count: 3.18M
+INFO: Trainable parameter count: 3.18M
+INFO: Trainable parameter count: 3.18M
+INFO: Trainable parameter count: 3.18M
+INFO: Trainable parameter count: 3.18M
+INFO: Trainable parameter count: 3.44M
+INFO: Trainable parameter count: 3.44M
+INFO: Trainable parameter count: 3.70M
+INFO: Trainable parameter count: 3.70M
+INFO: Trainable parameter count: 3.97M
+INFO: Trainable parameter count: 3.97M
+INFO: Trainable parameter count: 4.23M
+INFO: Trainable parameter count: 4.23M
+INFO: Trainable parameter count: 5.28M
+INFO: Trainable parameter count: 5.28M
+INFO: Trainable parameter count: 6.33M
+INFO: Trainable parameter count: 6.33M
+INFO: Trainable parameter count: 6.33M
+INFO: Trainable parameter count: 6.33M
+INFO: Trainable parameter count: 6.33M
+INFO: Trainable parameter count: 6.33M
+INFO: Trainable parameter count: 6.33M
+INFO: Trainable parameter count: 6.33M
+INFO: Trainable parameter count: 6.59M
+INFO: Trainable parameter count: 6.59M
+INFO: Trainable parameter count: 6.86M
+INFO: Trainable parameter count: 6.86M
+INFO: Trainable parameter count: 7.12M
+INFO: Trainable parameter count: 7.12M
+INFO: Trainable parameter count: 7.38M
+INFO: Trainable parameter count: 7.38M
+INFO: Trainable parameter count: 7.64M
+INFO: Trainable parameter count: 7.64M
+INFO: Trainable parameter count: 7.91M
+INFO: Trainable parameter count: 7.91M
+INFO: Trainable parameter count: 8.17M
+INFO: Trainable parameter count: 8.17M
+INFO: Trainable parameter count: 8.43M
+INFO: Trainable parameter count: 8.43M
+INFO: Trainable parameter count: 9.48M
+INFO: Trainable parameter count: 9.48M
+INFO: Trainable parameter count: 10.53M
+INFO: Trainable parameter count: 10.53M
+INFO: Trainable parameter count: 10.53M
+INFO: Trainable parameter count: 10.53M
+INFO: Trainable parameter count: 10.53M
+INFO: Trainable parameter count: 10.53M
+INFO: Trainable parameter count: 10.53M
+INFO: Trainable parameter count: 10.54M
+INFO: Trainable parameter count: 10.54M
+INFO: Trainable parameter count: 10.54M
+INFO: Trainable parameter count: 10.54M
+INFO: Trainable parameter count: 10.54M

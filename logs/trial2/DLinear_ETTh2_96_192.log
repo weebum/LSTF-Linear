@@ -1,0 +1,64 @@
+Args in experiment:
+Namespace(is_training=1, model_id='ETTh2_96_192', model='DLinear', data='ETTh2', root_path='./dataset/', data_path='ETTh2.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=192, individual=False, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.05, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=3, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:3
+>>>>>>>start training : ETTh2_96_192_DLinear_ETTh2_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8353
+val 2689
+test 2689
+Epoch: 1 cost time: 4.265350818634033
+Epoch: 1, Steps: 261 | Train Loss: 0.8949401 Vali Loss: 0.6905624 Test Loss: 1.2825083
+Validation loss decreased (inf --> 0.690562).  Saving model ...
+Updating learning rate to 0.05
+Epoch: 2 cost time: 2.156468629837036
+Epoch: 2, Steps: 261 | Train Loss: 0.6971072 Vali Loss: 0.3969856 Test Loss: 0.6192489
+Validation loss decreased (0.690562 --> 0.396986).  Saving model ...
+Updating learning rate to 0.025
+Epoch: 3 cost time: 2.146005868911743
+Epoch: 3, Steps: 261 | Train Loss: 0.5785160 Vali Loss: 0.4144040 Test Loss: 0.6498180
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.0125
+Epoch: 4 cost time: 2.2160027027130127
+Epoch: 4, Steps: 261 | Train Loss: 0.5313085 Vali Loss: 0.3122559 Test Loss: 0.4447795
+Validation loss decreased (0.396986 --> 0.312256).  Saving model ...
+Updating learning rate to 0.00625
+Epoch: 5 cost time: 2.170053243637085
+Epoch: 5, Steps: 261 | Train Loss: 0.5170497 Vali Loss: 0.3825610 Test Loss: 0.5981529
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.003125
+Epoch: 6 cost time: 2.0751595497131348
+Epoch: 6, Steps: 261 | Train Loss: 0.5038364 Vali Loss: 0.3015064 Test Loss: 0.4312499
+Validation loss decreased (0.312256 --> 0.301506).  Saving model ...
+Updating learning rate to 0.0015625
+Epoch: 7 cost time: 2.1762380599975586
+Epoch: 7, Steps: 261 | Train Loss: 0.4972736 Vali Loss: 0.3074146 Test Loss: 0.4433714
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.00078125
+Epoch: 8 cost time: 2.1669931411743164
+Epoch: 8, Steps: 261 | Train Loss: 0.4947566 Vali Loss: 0.3346457 Test Loss: 0.5051411
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 0.000390625
+Epoch: 9 cost time: 2.0910990238189697
+Epoch: 9, Steps: 261 | Train Loss: 0.4924501 Vali Loss: 0.3227803 Test Loss: 0.4742505
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : ETTh2_96_192_DLinear_ETTh2_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+mse:0.4312500059604645, mae:0.4432515501976013
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.02M
+INFO: Trainable parameter count: 0.04M
+INFO: Trainable parameter count: 0.04M
+Model(
+  37.25 k, 100.000% Params, 259.27 KMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 840.0 Mac, 0.324% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 840.0 Mac, 0.324% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 840.0 Mac, 0.324% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(18.62 k, 50.000% Params, 129.22 KMac, 49.838% MACs, in_features=96, out_features=192, bias=True)
+  (Linear_Trend): Linear(18.62 k, 50.000% Params, 129.22 KMac, 49.838% MACs, in_features=96, out_features=192, bias=True)
+)
+Computational complexity:       259.27 KMac
+Number of parameters:           37.25 k 

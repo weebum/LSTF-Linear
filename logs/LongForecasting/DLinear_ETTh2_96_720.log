@@ -1,0 +1,68 @@
+Args in experiment:
+Namespace(is_training=1, model_id='ETTh2_96_720', model='DLinear', data='ETTh2', root_path='./dataset/', data_path='ETTh2.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=720, individual=False, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.05, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.05, des='Exp', loss='mse', lradj='type1', use_amp=False, use_gpu=True, gpu=3, use_multi_gpu=False, devices='0,1,2,3', test_flop=True)
+Use GPU: cuda:3
+>>>>>>>start training : ETTh2_96_720_DLinear_ETTh2_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7825
+val 2161
+test 2161
+Epoch: 1 cost time: 4.24810791015625
+Epoch: 1, Steps: 244 | Train Loss: 1.0919220 Vali Loss: 0.7602128 Test Loss: 0.9298300
+Validation loss decreased (inf --> 0.760213).  Saving model ...
+Updating learning rate to 0.05
+Epoch: 2 cost time: 2.3681764602661133
+Epoch: 2, Steps: 244 | Train Loss: 0.8859288 Vali Loss: 0.8118538 Test Loss: 0.9525439
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.025
+Epoch: 3 cost time: 2.317946672439575
+Epoch: 3, Steps: 244 | Train Loss: 0.8121385 Vali Loss: 0.8254651 Test Loss: 1.3577995
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 0.0125
+Epoch: 4 cost time: 2.157480001449585
+Epoch: 4, Steps: 244 | Train Loss: 0.7613513 Vali Loss: 0.7019247 Test Loss: 0.8659980
+Validation loss decreased (0.760213 --> 0.701925).  Saving model ...
+Updating learning rate to 0.00625
+Epoch: 5 cost time: 2.3418240547180176
+Epoch: 5, Steps: 244 | Train Loss: 0.7372389 Vali Loss: 0.7332336 Test Loss: 0.9819631
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.003125
+Epoch: 6 cost time: 2.106849431991577
+Epoch: 6, Steps: 244 | Train Loss: 0.7262797 Vali Loss: 0.7071918 Test Loss: 0.9124080
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 0.0015625
+Epoch: 7 cost time: 2.4581146240234375
+Epoch: 7, Steps: 244 | Train Loss: 0.7186414 Vali Loss: 0.6756784 Test Loss: 0.7957000
+Validation loss decreased (0.701925 --> 0.675678).  Saving model ...
+Updating learning rate to 0.00078125
+Epoch: 8 cost time: 2.3313772678375244
+Epoch: 8, Steps: 244 | Train Loss: 0.7145691 Vali Loss: 0.6824035 Test Loss: 0.8326104
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 0.000390625
+Epoch: 9 cost time: 2.2547013759613037
+Epoch: 9, Steps: 244 | Train Loss: 0.7121889 Vali Loss: 0.6685117 Test Loss: 0.7727292
+Validation loss decreased (0.675678 --> 0.668512).  Saving model ...
+Updating learning rate to 0.0001953125
+Epoch: 10 cost time: 2.203497886657715
+Epoch: 10, Steps: 244 | Train Loss: 0.7121737 Vali Loss: 0.6857306 Test Loss: 0.8393021
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 9.765625e-05
+>>>>>>>testing : ETTh2_96_720_DLinear_ETTh2_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+mse:0.7727290987968445, mae:0.6307916045188904
+INFO: Trainable parameter count: 0.07M
+INFO: Trainable parameter count: 0.07M
+INFO: Trainable parameter count: 0.14M
+INFO: Trainable parameter count: 0.14M
+Model(
+  139.68 k, 100.000% Params, 969.96 KMac, 100.000% MACs, 
+  (decompsition): series_decomp(
+    0, 0.000% Params, 840.0 Mac, 0.087% MACs, 
+    (moving_avg): moving_avg(
+      0, 0.000% Params, 840.0 Mac, 0.087% MACs, 
+      (avg): AvgPool1d(0, 0.000% Params, 840.0 Mac, 0.087% MACs, kernel_size=(25,), stride=(1,), padding=(0,))
+    )
+  )
+  (Linear_Seasonal): Linear(69.84 k, 50.000% Params, 484.56 KMac, 49.957% MACs, in_features=96, out_features=720, bias=True)
+  (Linear_Trend): Linear(69.84 k, 50.000% Params, 484.56 KMac, 49.957% MACs, in_features=96, out_features=720, bias=True)
+)
+Computational complexity:       969.96 KMac
+Number of parameters:           139.68 k
